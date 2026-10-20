@@ -1,3 +1,66 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f5f3f2"><title>Your little QR code</title><link rel="stylesheet" href="style.css"><style>.qr-card{text-align:center}.qr-card h1{font-size:40px}.qr-card .qr-art{display:block;width:min(100%,440px);height:auto;margin:20px auto;border:1px solid #eae5e4;border-radius:14px}.qr-note{font-size:11px;color:#989197;line-height:1.7;max-width:390px;margin:0 auto 20px}.qr-actions{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}</style></head>
-<body><main class="shell"><header class="brand"><span class="brand-mark">♡</span> a little note for you</header><section class="card qr-card"><div class="kicker">A little way back here</div><h1>Your page,<br>in a little square.</h1><p class="intro">A soft, high-contrast code for the published page.</p><img class="qr-art" src="qr-code.png" alt="QR code for the public website"><p class="qr-note">This code points to <a href="https://jusrandtzn.github.io/a-little-note-for-you/">https://jusrandtzn.github.io/a-little-note-for-you/</a>. Anyone who scans it can open the site.</p><div class="qr-actions"><a class="primary" href="qr-code.png" download="little-note-qr.png">Save PNG <span>↓</span></a><a class="secondary" href="qr-code.svg" download="little-note-qr.svg">Save SVG</a></div></section></main></body></html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f3f2">
+  <meta name="description" content="Scan to open A Little Note for You.">
+  <title>Your little QR code</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .qr-card { text-align: center; padding-block: clamp(30px, 6vw, 48px); }
+    .qr-card h1 { font-size: clamp(36px, 8vw, 48px); }
+    .qr-card h1 em { color: var(--pink-dark); font-style: italic; }
+    .qr-card .intro { max-width: 390px; margin: 0 auto 24px; }
+    .qr-frame {
+      width: min(100%, 352px);
+      margin: 0 auto 15px;
+      padding: 15px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: 0 12px 32px #3634380d;
+    }
+    .qr-art { display: block; width: 100%; height: auto; image-rendering: pixelated; }
+    .scan-hint { margin: 0 0 24px; color: var(--muted); font-size: 12px; }
+    .link-label {
+      display: block; margin: 0 0 7px; color: var(--pink-dark);
+      font-size: 10px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase;
+    }
+    .site-url {
+      display: inline-block; max-width: 100%; margin: 0 auto 22px;
+      color: var(--ink); font-size: 12px; line-height: 1.65;
+      overflow-wrap: anywhere; text-decoration-color: #d8bdc3; text-underline-offset: 4px;
+    }
+    .qr-actions { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .qr-actions a { display: inline-flex; align-items: center; text-decoration: none; }
+    .qr-note { margin: 21px 0 0; color: #aaa3a8; font-size: 10px; line-height: 1.6; }
+    @media (max-width: 520px) {
+      .qr-card { padding-inline: 22px; }
+      .qr-frame { width: min(100%, 310px); padding: 12px; border-radius: 16px; }
+      .site-url { font-size: 11px; }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <header class="brand"><span class="brand-mark">♡</span> a little note for you</header>
+    <section class="card qr-card" aria-labelledby="qr-title">
+      <div class="kicker">A little way back here</div>
+      <h1 id="qr-title">Your page,<br><em>one scan away.</em></h1>
+      <p class="intro">Open your camera and scan the code to visit the page.</p>
+      <figure class="qr-frame">
+        <img class="qr-art" src="qr-code.png" width="396" height="396" alt="QR code that opens the A Little Note for You website">
+      </figure>
+      <p class="scan-hint">A small square, leading to a little story. ♡</p>
+      <span class="link-label">The link in this code</span>
+      <a class="site-url" href="https://jusrandtzn.github.io/a-little-note-for-you/">https://jusrandtzn.github.io/a-little-note-for-you/</a>
+      <div class="qr-actions">
+        <a class="primary" href="qr-code.png" download="a-little-note-qr.png">Save PNG <span>↓</span></a>
+        <a class="secondary" href="qr-code.svg" download="a-little-note-qr.svg">Save SVG</a>
+      </div>
+      <p class="qr-note">Anyone who scans this code can open the public website.</p>
+    </section>
+  </main>
+</body>
+</html>
