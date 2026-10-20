@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f2f1">
+  <meta name="description" content="A little story, a little puzzle, and a question. Made just for you.">
+  <title>A Little Note for You</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="falling" aria-hidden="true"></div>
+  <main class="shell">
+    <header class="brand"><span class="brand-mark">♡</span><span> a little note for you</span></header>
+    <section class="card screen active" id="login-screen">
+      <div class="kicker">A small trip back in time</div>
+      <h1>Some things find<br>their way back. <span class="soft-heart">♡</span></h1>
+      <p class="intro">A few little steps before the story begins.</p>
+      <form id="login-form">
+        <label for="username">Your username</label>
+        <input id="username" autocomplete="username" placeholder="Enter user name" required>
+        <p class="hint">your username is the name someone knew you by back in 2012, followed by its day of birth and a special character</p>
+        <label for="password">Your password</label>
+        <input id="password" type="password" autocomplete="current-password" placeholder="Enter password" required>
+        <button class="primary" type="submit">Continue <span>→</span></button>
+        <p class="fineprint">A private, just-for-fun page. This browser-only gate is not secure authentication.</p>
+      </form>
+    </section>
+
+    <section class="card screen" id="date-screen">
+      <div class="step">01 <i></i> 02</div><div class="kicker">One more little memory</div>
+      <h1>When does this<br>date belong? <span class="soft-heart">♡</span></h1>
+      <p class="intro">Choose a date between January 1990 and December 2026.</p>
+      <label for="memory-date">The date</label>
+      <input id="memory-date" type="date" min="1990-01-01" max="2026-12-31">
+      <div class="date-output">Your answer <strong id="date-value">MM-DD-YYYY</strong></div>
+      <button class="primary" id="date-submit">Unlock the next step <span>→</span></button>
+    </section>
+
+    <section class="card screen" id="puzzle-screen">
+      <div class="kicker">A little patience, please</div><h1>Put the moment<br>back together.</h1>
+      <p class="intro">Slide the pieces into place before the two minutes are up.</p>
+      <div class="puzzle-meta"><span>Time left</span><strong id="timer">02:00</strong><button class="text-button" id="restart">Shuffle ↻</button></div>
+      <div class="puzzle" id="puzzle" aria-label="Sliding photo puzzle"></div>
+      <p class="puzzle-help">Tap a tile beside the empty space to move it.</p>
+    </section>
+
+    <section class="card screen centered" id="envelope-screen">
+      <div class="kicker">The next page is inside</div><h1>A little something<br>I’ve held onto.</h1>
+      <p class="intro">Tap the envelope when you’re ready.</p>
+      <button class="envelope-wrap" id="open-envelope" aria-label="Open the envelope"><span class="envelope"><span class="stamp">♡</span><span class="flap"></span><span class="envelope-label">Open Me</span></span></button>
+      <p class="fineprint">Made with a little courage, and a lot of care.</p>
+    </section>
+
+    <section class="card screen letter-card" id="letter-screen">
+      <div class="kicker">A letter, from me to you</div><h1>Dear old friend,</h1>
+      <article class="letter">
+        <p>Back in 2012, I was just a boy living two houses away from a girl who somehow became more than just a neighbor. I never knew how our connection began, but our daily conversations made ordinary days feel timeless. Somewhere between those messages, I fell for her.</p>
+        <p>Young, foolish, and full of courage, I tried to court her. She asked me to wait three years, but I gave up before time could answer. I found someone else, sent one last note hoping we could remain friends, and somehow, that became the end of our little story.</p>
+        <p>Then came more than a decade of silence.</p>
+        <p>And now, here we are again—two familiar names finding their way into each other's lives. Funny how time works, isn't it? Don't worry, I'm not applying for the role of someone special in your life. 😂 I'm simply grateful that a door I thought had closed forever has opened a little.</p>
+        <p>I'm not here to rewrite the past or promise a future I cannot predict. I only wish to approach this unexpected chapter with a wiser mind, sincere intentions, and actions that speak louder than words.</p>
+        <p class="signoff">With sincerity and a little courage,</p>
+      </article>
+      <button class="primary" data-next="proposal-screen">Read one more thing <span>→</span></button>
+    </section>
+
+    <section class="card screen centered" id="proposal-screen">
+      <div class="kicker">A question with no pressure</div><div class="chibi" aria-hidden="true"><span>૮₍ ˶ᵔ ᵕ ᵔ˶ ₎ა</span><span>૮₍ ˶• ᴗ •˶ ₎ა</span></div>
+      <h1>Will you be my<br><em>best friend</em> for the rest of our lives?</h1>
+      <p class="intro">Whatever you choose, I’ll respect it.</p>
+      <div class="choices"><button class="primary" id="yes-button">Yes ♡</button><button class="secondary" id="no-button">No, thank you</button></div>
+    </section>
+
+    <section class="card screen centered ending" id="yes-screen"><div class="kicker">A new little chapter</div><div class="big-heart">♡</div><h1>Thank you for<br>letting me back in.</h1><p class="intro">I may not promise perfection, but I promise sincerity.</p><div class="chibi" aria-hidden="true"><span>૮₍ ˶ᵔ ᵕ ᵔ˶ ₎ა</span><span>૮₍ ˶• ᴗ •˶ ₎ა</span></div><button class="secondary restart-story">Read it again</button></section>
+    <section class="card screen centered ending" id="no-screen"><div class="kicker">Thank you for reading</div><div class="big-heart">♡</div><h1>Your answer<br>is respected.</h1><p class="intro">Thank you for taking the time to read my letter. I understand that not every door is meant to open again, and not every story deserves another chapter. I’ll respect it without resentment. Some things are better left as memories, and I’ll still be grateful that our paths crossed once more. No hard feelings, just respect for your decision. 🙂</p><button class="secondary restart-story">Read it again</button></section>
+  </main>
+
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-box"><div class="modal-icon" id="modal-icon">♡</div><h2 id="modal-title"></h2><p id="modal-message"></p><button class="primary" id="modal-button">Okay</button></div></div>
+  <div class="confetti" id="confetti" aria-hidden="true"></div>
+  <script src="script.js"></script>
+</body>
+</html>
+
